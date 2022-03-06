@@ -1,0 +1,67 @@
+# 当前workflow配置的名称
+name: Build and Deploy
+# 任务触发时机，这里是在向github上的master分支提交代码以及提交PR时进行触发
+on:
+  push: # 触发条件
+    branches: [master] # 分支名
+  workflow_dispatch:
+# 需要触发的任务信息，一个workflow可以包含多个的job，这里只有一个名为build的job
+jobs:
+  deploy_gh_pages:
+    # 当前job需要运行在的系统环境
+    runs-on: ubuntu-latest
+    # 实现一个job需要执行的各个步骤
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Install Node.js
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      # Cache node_modules
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      # Install required dependencies to build app
+      - name: Install Dependencies
+        run: npm ci
+      # Use angular-cli-ghpages to deploy app
+      - name: Deploy to Github Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy
+      - name: Github Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          # 注意替换为你的 GitHub 源仓库地址
+          source-repo: git@github.com:yequanrui/CloudAdmin.git
+          # 注意替换为你的 Gitee 目标仓库地址
+          destination-repo: git@gitee.com:yequanrui/CloudAdmin.git
+      - name: Rebuild Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          repository: yequanrui/CloudAdmin
+          cookie: ${{ secrets.GITEE_COOKIE }}
+          directory:
+          https: true
+          # 注意替换为你的 Gitee 用户名
+          gitee-username: yequanrui
+          # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          # 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错
+          gitee-repo: yequanrui/CloudAdmin
+          # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
+          branch: gh-pages
