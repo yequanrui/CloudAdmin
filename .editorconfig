@@ -29,11 +29,11 @@ tab_width = 2
 ## 设置为lf、cr或crlf以控制如何表示换行符。
 end_of_line = lf
 
-## 设置为true以删除换行符之前的任何空格字符，设置为false以确保不会。
-trim_trailing_whitespace = true
-
 ## 设置为true以确保文件在保存时以换行符结束，设置为false以确保不以换行符结束。
 insert_final_newline = true
+
+## 设置为true以删除换行符之前的任何空格字符，设置为false以确保不会。
+trim_trailing_whitespace = true
 
 [*.ts]
 quote_type = single

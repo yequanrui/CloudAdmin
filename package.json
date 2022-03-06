@@ -1,17 +1,25 @@
 {
   "name": "cloud-admin",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "yequanrui",
+  "description": "Admin based on DevUI(Angular)",
+  "keywords": [
+    "angular",
+    "devui-admin"
+  ],
+  "main": "src/main.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "deploy": "ng deploy --base-href=/CloudAdmin/ --name='yequanrui' --email='yequanrui@qq.com'",
     "test": "ng test",
+    "clean": "rimraf package-lock.json node_modules",
     "prettier": "prettier --config ./.prettierrc --write \"src/app/pages/**/**/*.html\"",
     "stylelint": "stylelint \"src/app/pages/**/**/*.{scss,css}\" --config ./.stylelintrc.json --fix",
     "tslint": "tslint --fix -c ./tslint.json \"src/**/*{.ts}\""
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",
@@ -33,17 +41,30 @@
     "ng-devui": "^12.0.0-beta.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.10",
-    "@angular/cli": "~12.2.10",
+    "@angular-devkit/build-angular": "~12.2.16",
+    "@angular/cli": "~12.2.16",
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
-    "karma": "~6.3.0",
+    "karma": "~6.3.16",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
+  },
+  "engines": {
+    "node": ">= 12.22.10",
+    "npm": ">= 6.14.16"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yequanrui/CloudAdmin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yequanrui/CloudAdmin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yequanrui/CloudAdmin/issues"
   }
 }
