@@ -19,7 +19,7 @@ import { LANGUAGES } from 'src/config/language-config';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   tabActiveId: string | number = 'tab1';
   showPassword = false;
@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
     this.personalizeService.setRefTheme(ThemeType.Default);
 
     this.route.queryParams.pipe(
-      map(param => param.code)
+      map(param => param['code'])
     ).subscribe(code => {
       if(code && code.length > 0) {
         setTimeout(() => {

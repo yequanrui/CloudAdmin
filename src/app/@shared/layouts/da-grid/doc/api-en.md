@@ -224,7 +224,7 @@ public getPoint(): ReplaySubject<{currentPoint: DaBreakpoint, change: number, co
 import {DaScreenMediaQueryService} from'src/app/@shared/layouts/da-grid';
 ............
 export class XXXComponent implements OnInit, OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   constructor(
   private screenQueryService: DaScreenMediaQueryService

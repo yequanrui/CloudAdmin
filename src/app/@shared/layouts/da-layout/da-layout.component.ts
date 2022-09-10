@@ -9,12 +9,12 @@ import { DaLayoutConfig } from './da-layout.type';
   template: '<ng-content></ng-content>',
 })
 export class DaLayoutHeaderComponent implements OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @HostBinding('class.da-layout-header') default = true;
   @HostBinding('style.height')
   get height() {
-    return this?.config?.height + 'px';
+    return this?.config?.['height'] + 'px';
   }
 
   @HostBinding('style.z-index')
@@ -49,12 +49,12 @@ export class DaLayoutHeaderComponent implements OnDestroy {
   template: '<ng-content></ng-content>',
 })
 export class DaLayoutSecHeaderComponent implements OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @HostBinding('class.da-layout-sec-header') default = true;
   @HostBinding('style.height')
   get height() {
-    return this?.config?.height + 'px';
+    return this?.config?.['height'] + 'px';
   }
 
   @HostBinding('style.z-index')
@@ -89,7 +89,7 @@ export class DaLayoutSecHeaderComponent implements OnDestroy {
   template: '<ng-content></ng-content>',
 })
 export class DaLayoutSidebarComponent implements OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @HostBinding('class.da-layout-sidebar') default = true;
   @HostBinding('style.width')
@@ -129,7 +129,7 @@ export class DaLayoutSidebarComponent implements OnDestroy {
   template: '<ng-content></ng-content>',
 })
 export class DaLayoutSecSidebarComponent implements OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @HostBinding('class.da-layout-sec-sidebar') default = true;
   @HostBinding('style.width')
@@ -169,12 +169,12 @@ export class DaLayoutSecSidebarComponent implements OnDestroy {
   template: '<ng-content></ng-content>',
 })
 export class DaLayoutFooterComponent implements OnDestroy {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @HostBinding('class.da-layout-footer') default = true;
   @HostBinding('style.width')
   get height() {
-    return this?.config?.height + 'px';
+    return this?.config?.['height'] + 'px';
   }
 
   @HostBinding('style.display')
@@ -207,7 +207,7 @@ export class DaLayoutFooterComponent implements OnDestroy {
 })
 export class DaLayoutComponent implements OnDestroy {
   @HostBinding('class.da-layout') default = true;
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
 
   @Input() config: DaLayoutConfig;
 

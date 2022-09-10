@@ -20,7 +20,7 @@
           </d-form-label>
           <d-form-control>
             <div>
-              <input dTextInput autocomplete="off" name="userEmail" placeholder="Email" [(ngModel)]="formData.email"  [dValidateRules]="formRules.emailRules" />
+              <input dTextInput autocomplete="off" name="userEmail" placeholder="Email" [(ngModel)]="formData.email"  [dValidateRules]="formRules['emailRules']" />
             </div>
           </d-form-control>
         </d-form-item>
@@ -36,7 +36,7 @@
               name="password"
               placeholder="Password"
               [(ngModel)]="formData.password"
-              [dValidateRules]="formRules.passwordRules"
+              [dValidateRules]="formRules['passwordRules']"
             />
           </d-form-control>
         </d-form-item>
@@ -52,7 +52,7 @@
               name="confirmPassword"
               placeholder="Confirm Password"
               [(ngModel)]="formData.confirmPassword"
-              [dValidateRules]="formRules.confirmPasswordRules"
+              [dValidateRules]="formRules['confirmPasswordRules']"
             />
           </d-form-control>
         </d-form-item>

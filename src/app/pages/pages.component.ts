@@ -18,7 +18,7 @@ import { Theme } from 'ng-devui/theme';
   styleUrls: ['./pages.component.scss'],
 })
 export class PagesComponent implements OnInit {
-  private destroy$ = new Subject();
+  private destroy$: Subject<void> = new Subject();
   menu: any;
 
   layoutConfig: DaLayoutConfig;
@@ -42,7 +42,7 @@ export class PagesComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe((config: DaLayoutConfig) => {
         this.layoutConfig = config;
-        this.isSidebarShrink = !!this.layoutConfig.sidebar.shrink;
+        this.isSidebarShrink = !!this.layoutConfig.sidebar['shrink'];
       });
 
     this.mediaQueryService
@@ -143,7 +143,7 @@ export class PagesComponent implements OnInit {
         ? 54
         : 240;
     }
-    this.layoutConfig.sidebar.shrink = this.isSidebarShrink;
+    this.layoutConfig.sidebar['shrink'] = this.isSidebarShrink;
     this.layoutService.updateLayoutConfig(this.layoutConfig);
   }
 
