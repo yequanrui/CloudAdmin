@@ -13,10 +13,10 @@ jobs:
     # 实现一个job需要执行的各个步骤
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # Install Node.js
       - name: Setup Node.js Environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Get npm cache directory
@@ -39,7 +39,7 @@ jobs:
       - name: Deploy to Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+        run: npx angular-cli-ghpages --dir=dist/CloudAdmin --repo=https://github.com/yequanrui/CloudAdmin.git --name="yequanrui" --email=yequanrui@qq.com
       - name: Github Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
