@@ -1,0 +1,193 @@
+/* stylelint-disable */
+:export {
+  devui-global-bg: var(--devui-global-bg, #f5f5f5);
+  devui-glass-morphism-bg: var(--devui-glass-morphism-bg, rgba(245, 246, 248, 0.9));
+  devui-global-bg-normal: var(--devui-global-bg-normal, #ffffff);
+  devui-base-bg: var(--devui-base-bg, #ffffff);
+  devui-base-bg-dark: var(--devui-base-bg-dark, #000000);
+  devui-brand: var(--devui-brand, #0a59f7);
+  devui-brand-foil: var(--devui-brand-foil, #f2f2f3);
+  devui-brand-hover: var(--devui-brand-hover, #3979f9);
+  devui-brand-active: var(--devui-brand-active, #0950de);
+  devui-brand-active-focus: var(--devui-brand-active-focus, #00196b);
+  devui-contrast: var(--devui-contrast, #c7000b);
+  devui-text: var(--devui-text, #191919);
+  devui-text-weak: var(--devui-text-weak, #333333);
+  devui-aide-text: var(--devui-aide-text, #595959);
+  devui-aide-text-hover: var(--devui-aide-text-hover, #000000);
+  devui-aide-text-stress: var(--devui-aide-text-stress, #333333);
+  devui-placeholder: var(--devui-placeholder, #808080);
+  devui-light-text: var(--devui-light-text, #ffffff);
+  devui-dark-text: var(--devui-dark-text, #000000);
+  devui-link: var(--devui-link, #0950de);
+  devui-link-active: var(--devui-link-active, #0950de);
+  devui-link-light: var(--devui-link-light, #6b9bfa);
+  devui-link-light-active: var(--devui-link-light-active, #9dbdfc);
+  devui-line: var(--devui-line, #dbdbdb);
+  devui-dividing-line: var(--devui-dividing-line, #f0f0f0);
+  devui-block: var(--devui-block, #ffffff);
+  devui-area: var(--devui-area, #f3f3f3);
+  devui-danger: var(--devui-danger, #e02128);
+  devui-warning: var(--devui-warning, #fcc800);
+  devui-waiting: var(--devui-waiting, #9dbdfc);
+  devui-success: var(--devui-success, #058358);
+  devui-info: var(--devui-info, #0a59f7);
+  devui-initial: var(--devui-initial, #cedefd);
+  devui-unavailable: var(--devui-unavailable, #f3f3f3);
+  devui-shadow: var(--devui-shadow, rgba(0, 0, 0, 0.16));
+  devui-light-shadow: var(--devui-light-shadow, rgba(0, 0, 0, 0.08));
+  devui-connected-overlay-shadow: var(--devui-connected-overlay-shadow, rgba(0, 0, 0, 0.16));
+  devui-feedback-overlay-shadow: var(--devui-feedback-overlay-shadow, rgba(0, 0, 0, 0.16));
+  devui-feedback-overlay-backdrop: var(--devui-feedback-overlay-backdrop, rgba(0, 0, 0, 0.3));
+  devui-hover-shadow: var(--devui-hover-shadow, rgba(0, 0, 0, 0.16));
+  devui-table-column-shadow-color: var(--devui-table-column-shadow-color, rgba(37, 43, 58, 0.08));
+  devui-icon-text: var(--devui-icon-text, #808080);
+  devui-icon-bg: var(--devui-icon-bg, #ffffff);
+  devui-icon-fill: var(--devui-icon-fill, #595959);
+  devui-icon-fill-weak: var(--devui-icon-fill-weak, #808080);
+  devui-icon-fill-hover: var(--devui-icon-fill-hover, #191919);
+  devui-icon-fill-active: var(--devui-icon-fill-active, #191919);
+  devui-icon-fill-active-hover: var(--devui-icon-fill-active-hover, #000000);
+  devui-shape-icon-fill: var(--devui-shape-icon-fill, #c2c2c2);
+  devui-shape-icon-fill-hover: var(--devui-shape-icon-fill-hover, #808080);
+  devui-shape-icon-fill-active: var(--devui-shape-icon-fill-active, #808080);
+  devui-shape-icon-fill-disabled: var(--devui-shape-icon-fill-disabled, #f0f0f0);
+  devui-form-control-line: var(--devui-form-control-line, #dbdbdb);
+  devui-form-control-bg: var(--devui-form-control-bg, #ffffff);
+  devui-form-control-line-hover: var(--devui-form-control-line-hover, #808080);
+  devui-form-control-line-active: var(--devui-form-control-line-active, #0a59f7);
+  devui-form-control-interactive-outline: var(--devui-form-control-interactive-outline, rgba(94, 124, 224, 0.08));
+  devui-form-control-line-active-hover: var(--devui-form-control-line-active-hover, #00196b);
+  devui-list-item-active-bg: var(--devui-list-item-active-bg, #cedefd);
+  devui-list-item-active-text: var(--devui-list-item-active-text, #000000);
+  devui-list-item-active-hover-bg: var(--devui-list-item-active-hover-bg, #cedefd);
+  devui-list-item-hover-bg: var(--devui-list-item-hover-bg, #f2f2f3);
+  devui-list-item-hover-text: var(--devui-list-item-hover-text, #000000);
+  devui-list-item-selected-bg: var(--devui-list-item-selected-bg, #cedefd);
+  devui-list-item-strip-bg: var(--devui-list-item-strip-bg, #e6eeff);
+  devui-disabled-bg: var(--devui-disabled-bg, #f3f3f3);
+  devui-disabled-line: var(--devui-disabled-line, #e6e6e6);
+  devui-disabled-text: var(--devui-disabled-text, #c2c2c2);
+  devui-primary-disabled: var(--devui-primary-disabled, #9dbdfc);
+  devui-icon-fill-active-disabled: var(--devui-icon-fill-active-disabled, #9dbdfc);
+  devui-label-bg: var(--devui-label-bg, #f0f0f0);
+  devui-connected-overlay-bg: var(--devui-connected-overlay-bg, #ffffff);
+  devui-connected-overlay-line: var(--devui-connected-overlay-line, #0950de);
+  devui-fullscreen-overlay-bg: var(--devui-fullscreen-overlay-bg, #ffffff);
+  devui-feedback-overlay-bg: var(--devui-feedback-overlay-bg, #333333);
+  devui-feedback-overlay-text: var(--devui-feedback-overlay-text, #f0f0f0);
+  devui-embed-search-bg: var(--devui-embed-search-bg, #f2f2f3);
+  devui-embed-search-bg-hover: var(--devui-embed-search-bg-hover, #f5f5f5);
+  devui-float-block-shadow: var(--devui-float-block-shadow, rgba(94, 124, 224, 0.3));
+  devui-highlight-overlay: var(--devui-highlight-overlay, rgba(255, 255, 255, 0.8));
+  devui-range-item-hover-bg: var(--devui-range-item-hover-bg, #cedefd);
+  devui-gray-form-control-bg: var(--devui-gray-form-control-bg, #f5f5f5);
+  devui-gray-form-control-hover-bg: var(--devui-gray-form-control-hover-bg, #dfdfdf);
+  devui-nav-expand-bg: var(--devui-nav-expand-bg, #fbfbfc);
+  devui-primary: var(--devui-primary, #0a59f7);
+  devui-primary-hover: var(--devui-primary-hover, #3979f9);
+  devui-primary-active: var(--devui-primary-active, #00196b);
+  devui-contrast-hover: var(--devui-contrast-hover, #cc272a);
+  devui-contrast-active: var(--devui-contrast-active, #78080e);
+  devui-danger-line: var(--devui-danger-line, #e02128);
+  devui-danger-bg: var(--devui-danger-bg, #fabdc1);
+  devui-danger-text: var(--devui-danger-text, #850f12);
+  devui-warning-line: var(--devui-warning-line, #f4840c);
+  devui-warning-bg: var(--devui-warning-bg, #fde2bd);
+  devui-warning-text: var(--devui-warning-text, #c76207);
+  devui-info-line: var(--devui-info-line, #0a59f7);
+  devui-info-bg: var(--devui-info-bg, #cedefd);
+  devui-success-line: var(--devui-success-line, #09aa71);
+  devui-success-bg: var(--devui-success-bg, #bcf2db);
+  devui-success-text: var(--devui-success-text, #036142);
+  devui-primary-line: var(--devui-primary-line, #0a59f7);
+  devui-primary-bg: var(--devui-primary-bg, #e6eeff);
+  devui-default-line: var(--devui-default-line, #0a59f7);
+  devui-default-bg: var(--devui-default-bg, #fafafa);
+  devui-animation-ease-in-smooth: var(--devui-animation-ease-in-smooth, cubic-bezier(0.645, 0.045, 0.355, 1));
+  devui-animation-duration-slow: var(--devui-animation-duration-slow, 300ms);
+  devui-animation-duration-base: var(--devui-animation-duration-base, 200ms);
+  devui-animation-duration-fast: var(--devui-animation-duration-fast, 100ms);
+  devui-animation-ease-in: var(--devui-animation-ease-in, cubic-bezier(0.5, 0, 0.84, 0.25));
+  devui-animation-ease-out: var(--devui-animation-ease-out, cubic-bezier(0.16, 0.75, 0.5, 1));
+  devui-animation-ease-in-out: var(--devui-animation-ease-in-out, cubic-bezier(0.5, 0.05, 0.5, 0.95));
+  devui-animation-ease-in-out-smooth: var(--devui-animation-ease-in-out-smooth, cubic-bezier(0.645, 0.045, 0.355, 1));
+  devui-animation-linear: var(--devui-animation-linear, cubic-bezier(0, 0, 1, 1));
+  devui-border-radius: var(--devui-border-radius, 2px);
+  devui-border-radius-feedback: var(--devui-border-radius-feedback, 4px);
+  devui-border-radius-card: var(--devui-border-radius-card, 6px);
+  devui-border-radius-full: var(--devui-border-radius-full, 100px);
+  devui-font-size: var(--devui-font-size, 12px);
+  devui-font-size-card-title: var(--devui-font-size-card-title, 14px);
+  devui-font-size-page-title: var(--devui-font-size-page-title, 16px);
+  devui-font-size-modal-title: var(--devui-font-size-modal-title, 18px);
+  devui-font-size-price: var(--devui-font-size-price, 20px);
+  devui-font-size-data-overview: var(--devui-font-size-data-overview, 24px);
+  devui-font-size-h1-title: var(--devui-font-size-h1-title, 28px);
+  devui-font-size-h2-title: var(--devui-font-size-h2-title, 24px);
+  devui-font-size-h3-title: var(--devui-font-size-h3-title, 20px);
+  devui-font-size-h4-title: var(--devui-font-size-h4-title, 18px);
+  devui-font-size-h5-title: var(--devui-font-size-h5-title, 16px);
+  devui-font-size-icon: var(--devui-font-size-icon, 16px);
+  devui-font-size-sm: var(--devui-font-size-sm, 12px);
+  devui-font-size-md: var(--devui-font-size-md, 12px);
+  devui-font-size-lg: var(--devui-font-size-lg, 14px);
+  devui-font-title-weight: var(--devui-font-title-weight, bold);
+  devui-font-content-weight: var(--devui-font-content-weight, normal);
+  devui-line-height-base: var(--devui-line-height-base, 1.5);
+  devui-shadow-length-base: var(--devui-shadow-length-base, 0 1px 6px 0);
+  devui-shadow-length-slide-left: var(--devui-shadow-length-slide-left, -2px 0 8px 0);
+  devui-shadow-length-slide-right: var(--devui-shadow-length-slide-right, 2px 0 8px 0);
+  devui-shadow-length-connected-overlay: var(--devui-shadow-length-connected-overlay, 0 4px 12px 0);
+  devui-shadow-length-hover: var(--devui-shadow-length-hover, 0 8px 24px 0);
+  devui-shadow-length-feedback-overlay: var(--devui-shadow-length-feedback-overlay, 0 8px 24px 0);
+  devui-shadow-length-fullscreen-overlay: var(--devui-shadow-length-fullscreen-overlay, 0 16px 48px 0);
+  devui-z-index-full-page-overlay: var(--devui-z-index-full-page-overlay, 1080);
+  devui-z-index-pop-up: var(--devui-z-index-pop-up, 1060);
+  devui-z-index-dropdown: var(--devui-z-index-dropdown, 1052);
+  devui-z-index-modal: var(--devui-z-index-modal, 1050);
+  devui-z-index-drawer: var(--devui-z-index-drawer, 1040);
+  devui-z-index-framework: var(--devui-z-index-framework, 1000);
+}
+
+.da-footer .da-footer-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.da-footer .da-footer-intro .da-production-name a {
+  color: var(--devui-text-weak, #333333);
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.da-footer .da-footer-intro .da-production-name a:hover {
+  color: var(--devui-text, #191919);
+}
+.da-footer .da-footer-intro .da-organization a {
+  color: var(--devui-text-weak, #333333);
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.da-footer .da-footer-intro .da-organization a:hover {
+  color: var(--devui-text, #191919);
+}
+.da-footer .da-footer-intro .da-homepage-active {
+  outline: none;
+}
+.da-footer .da-footer-intro a {
+  display: flex;
+  align-items: center;
+}
+.da-footer .da-footer-intro a svg {
+  fill: var(--devui-text-weak, #333333);
+  margin: 0 20px;
+  transition: fill 0.2s ease-in-out;
+}
+.da-footer .da-footer-intro a svg:hover {
+  fill: var(--devui-text, #191919);
+}
+.da-footer .da-presented {
+  text-align: center;
+  color: var(--devui-text-weak, #333333);
+  padding-top: 12px;
+}/*# sourceMappingURL=footer.component.css.map */
